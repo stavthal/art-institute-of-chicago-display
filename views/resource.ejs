@@ -68,6 +68,14 @@
         </tr>
         <% } %>
 
+
+        <% if (data.data.dimensions != null) { %>
+        <tr>
+            <td><h5>Dimensions: </h5></td>
+            <td style="text-align: center;"><%= data.data.dimensions%></td>
+        </tr>
+        <% } %>
+
         <% if(data.data.inscriptions != null) { %>
         <tr>
             <td><h5>Inscriptions: </h5></td>
