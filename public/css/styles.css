@@ -163,6 +163,35 @@
 }
 
 
+/* change placeholder color */
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #f1356d;
+  opacity: 1; /* Firefox */
+}
+
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #f1356d;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #f1356d;
+}
+
+
+.num-input {
+  color: #f1356d;
+  border: 1px solid #f1356d;
+  border-radius: 10px;
+}
+
+.num-input:focus {
+  color:#f1356d;
+  border: 2px solid #f1356d;
+  outline: none;
+
+}
+
 
 .home-button  { 
   text-decoration: none;

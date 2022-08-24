@@ -67,7 +67,7 @@
     <form id="form-manual-enter">
     <h6>Otherwise,enter a page number manually up to <%=data.pagination.total_pages%>:</h6>
     <div class="hidden" id="popup">You can only enter values between 1 and <%=data.pagination.total_pages%></div>
-    <input required type="number" min="1" max="9737" id="page_input" value="" name="page_input" placeholder="Max:<%=data.pagination.total_pages%>" />
+    <input class="num-input" required type="number" min="1" max="9737" id="page_input" value="" name="page_input" placeholder="Max:<%=data.pagination.total_pages%>" />
     <button id="submit-button" type="submit">Transfer to page</button>
 </div>
 
