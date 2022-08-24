@@ -192,6 +192,9 @@
 
 }
 
+#home-button-div {
+    text-align: center;
+}
 
 .home-button  { 
   text-decoration: none;
@@ -199,6 +202,7 @@
   color: #f1356d;
   border: 1px solid #f1356d;
   border-radius: 20%;
+  text-align: center;
 }
 .home-button:hover {
   color: #fff;
