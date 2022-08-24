@@ -109,7 +109,7 @@
     document.getElementById("submit-button").addEventListener("click", (event) => {
         const page_number = document.getElementById("page_input").value;
         if (page_number >= 1 && page_number <= totalPages) {
-            this.location.href = `http://localhost:3000/artworks/page=${page_number}`;
+            this.location.href = `/artworks/page=${page_number}`;
            
         }
     });
