@@ -111,7 +111,15 @@
 </div>
 <div id="home-button-div">
     <a href="/" class="home-button">Home</a>
+    <a style="cursor: pointer" id="back-button" class="home-button">Back</a>
 </div>
+
+
+<script>
+    $('#back-button').on("click", () => {
+        history.back();
+    })
+</script>
 
 
 
