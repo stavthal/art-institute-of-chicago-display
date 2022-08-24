@@ -1,6 +1,21 @@
 <%- include('partials/header') %>
 
 
+
+<script>
+    //script that detects if the loaded page has any data in it
+    const path = window.location.pathname;
+    const page = path.split('/artworks/page=')[1];
+    const totalPagesNumber = <%= data.pagination.total_pages %>;
+    
+    if ( page > totalPagesNumber || page < 1) {
+        window.alert("The current page does not exist in the API");
+        history.back();
+    }
+
+</script>
+
+
 <h1 style="color:#c55275; text-align:center; margin-top: 1rem;">All artworks</h1>
 <h2 style="color:#c55275; text-align:center; margin-bottom: 3rem">Click any of the titles to view the artwork</h2>
 
@@ -27,7 +42,9 @@
 
 
 <div class="page-links">
+    <% if(data.pagination.current_page > 1) { %>
     <a href="/artworks/page=<%=data.pagination.current_page-1%>"><</a>
+    <% } %>
     <%if(data.pagination.current_page > 12) { %>
         <a href="/artworks/page=1">Start</a>
     <% } %>

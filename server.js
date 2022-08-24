@@ -61,7 +61,7 @@ server.get("/about", (req,res) => {
 });
 
 server.get("/404", (req,res) => {
-    res.send("404");
+    res.render("404");
 })
 
 //error route (/* anything else than the routes mentioned above)
