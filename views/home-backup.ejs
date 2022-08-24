@@ -1,0 +1,97 @@
+<%- include('partials/header') %>
+
+
+<h1 style="color:#c55275; text-align:center; margin-top: 1rem; margin-bottom: 3rem">All resources</h1>
+
+<div class="resources">
+<% for(var i = 0; i < data.data.length; i++) { %>
+    <div class="resources-item">
+    <a class="resources-item-link" href="/artworks/<%=data.data[i].id%>"><h2><%= data.data[i].title %></h2></a>
+    <h7>Main reference number: </h7><%= data.data[i].main_reference_number %><br />
+    <h7>Place of origin: </h7><%= data.data[i].place_of_origin %><br />
+    <h7>Department: </h7><%= data.data[i].department_title %><br />
+    <h7>Artist: </h7><%= data.data[i].artist_title %><br />
+    <hr>
+</div>
+<% } %>
+
+
+<div class="page-links">
+    <a href="/artworks/page=<%=data.pagination.current_page-1%>"><</a>
+    <%if(data.pagination.current_page > 12) { %>
+        <a href="/artworks/page=1">Start</a>
+    <% } %>
+    <% for(var i = data.pagination.current_page; i < data.pagination.current_page+12; i++) { %>
+      
+        <% if(data.pagination.current_page === i ) { %>
+            <a class="active-page"><%=i%></a>
+        <% } else if(i <= data.pagination.total_pages) { %>
+            <a href="/artworks/page=<%=i%>"><%=i%></a>
+        <% } %>
+    <% } %>
+    <a href="/artworks/page=<%=data.pagination.total_pages%>">End</a>
+    <a href="/artworks/page=<%=data.pagination.current_page+1%>">></a>
+</div>
+
+
+    
+
+<div id="manual-enter">
+    <form id="form-manual-enter">
+    <h6>Otherwise,enter a page number manually up to <%=data.pagination.total_pages%>:</h6>
+    <div class="hidden" id="popup">You can only enter values between 1 and <%=data.pagination.total_pages%></div>
+    <input required type="number" min="1" max="9737" id="page_input" value="" name="page_input" placeholder="Max:<%=data.pagination.total_pages%>" />
+    <button id="submit-button" type="submit">Transfer to page</button>
+</div>
+
+<script>
+
+
+    var totalPages = <%=data.pagination.total_pages%>;
+
+
+    
+    //setting the max allowed value of the number input
+    var pageInput = document.getElementById("page_input");
+    
+    pageInput.addEventListener("change", (event) => {
+        if (event.target.value == 0 || event.target.value > totalPages)
+        {   
+            event.target.value = "";
+            $('#popup').removeClass('hidden');
+            $('#popup').removeClass('fade-out');
+            $('#popup').addClass('fade-in');
+        } else if (event.target.value != null) {
+            $('#popup').removeClass('fade-in');
+            
+            if ((document.getElementById('popup').classList.contains('hidden') === false)) {
+                $('#popup').addClass('fade-out');
+                $('#popup').addClass('hidden');
+            }
+            
+        }
+    })
+    
+    
+
+
+    document.getElementById("form-manual-enter").addEventListener("click", function(event) {
+        event.preventDefault();        
+    });
+
+    document.getElementById("submit-button").addEventListener("click", (event) => {
+        const page_number = document.getElementById("page_input").value;
+        if (page_number >= 1 && page_number <= totalPages) {
+            this.location.href = `http://localhost:3000/artworks/page=${page_number}`;
+           
+        }
+    });
+</script>
+
+</div>
+
+
+
+<%- include('partials/footer') %>
+
+

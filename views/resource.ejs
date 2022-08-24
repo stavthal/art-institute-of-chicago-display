@@ -1,0 +1,110 @@
+<%- include('partials/header') %>
+
+<div class="container">
+    <h1 class="painting-title"><%=data.data.title%></h1>
+    <hr>
+
+    
+        <div class="image-frame">
+            <% if(data.data.image_id) { %>
+            <img class="painting" width="50%" height="50%" src="https://www.artic.edu/iiif/2/<%=data.data.image_id%>/full/843,/0/default.jpg">
+            <% } %>
+        </div>
+        <hr>
+   
+    <br>
+    <div class="resource-table-frame">
+        <table class="resource-table">
+        
+        <% if(data.data.artist_title != null) { %>
+        <tr>
+            <td><h5>Artist: </h5></td>
+            <td style="text-align: center;"><%= data.data.artist_title %></td>
+        </tr>
+        <% } %>
+        
+        <% if(data.data.title != null) { %>
+        <tr>
+            <td><h5>Title: </h5></td>
+            <td style="text-align: center;"><%= data.data.title %></td>
+        </tr>
+        <% } %>
+
+        <% if(data.data.place_of_origin != null) { %>
+        <tr>
+            <td><h5>Place of origin: </h5></td>
+            <td style="text-align: center;"><%= data.data.place_of_origin%></td>
+        </tr>
+        <% } %>
+
+        <% if(data.data.date_start != null && data.data.date_end != null ) { %>
+        <tr>
+            <td><h5>Date: </h5></td>
+            <td style="text-align: center;">
+            
+            <% if(data.data.date_start < 0) { %>
+                <%= data.data.date_start *(-1)  %> B.C
+            <% } else { %>
+                <%= data.data.date_start  %>
+            <% } %>
+                - 
+            <% if(data.data.date_end < 0) { %>
+                <%= data.data.date_end *(-1) %> B.C
+            <% } else { %>
+                <%= data.data.date_end%>
+            <% } %>
+            </td>
+        </tr>
+        <% } %>
+
+
+        <% if (data.data.medium_display != null ) { %>
+        <tr>
+            <td><h5>Medium: </h5></td>
+            <td style="text-align: center;"><%= data.data.medium_display%></td>
+        </tr>
+        <% } %>
+
+        <% if(data.data.inscriptions != null) { %>
+        <tr>
+            <td><h5>Inscriptions: </h5></td>
+            <td style="text-align: center;"><%= data.data.inscriptions%></td>
+        </tr>
+        <% } %>
+
+        <tr>
+            <td><h5>Main reference number: </h5></td>
+            <td style="text-align: center;"><%= data.data.main_reference_number %></td>
+        </tr>
+
+        <% if (data.data.credit_line != null)  { %>
+        <tr>
+            <td><h5>Credit line: </h5></td> 
+            <td style="text-align: center;"><%= data.data.credit_line%></td>
+        </tr>
+        <% } %>
+
+        <% if (data.data.department_title != null ) { %>
+        <tr>
+            <td><h5>Department: </h5><br /></td>
+            <td style="text-align: center;"><%= data.data.department_title %></td>
+        </tr>
+
+        <% } %>
+         
+       
+            
+         </table>
+
+         
+    </div>
+        
+    <hr>
+    
+</div>
+<div style="text-align: center">
+        
+        <a href="/" class="home-button">Home</a>
+</div>
+
+<%- include('partials/footer') %>

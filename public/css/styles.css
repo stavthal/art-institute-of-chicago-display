@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+
+/* Scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(133, 91, 91);
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ca2758;
+  border-radius: 10px;
+}
+
+/* base styles */
+* {
+  margin: 0;
+  font-family: "Quicksand";
+  color: #fff;
+}
+
+
+.navbar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  border-bottom: 1px solid #f2f2f2;
+}
+.navbar h1 {
+  color: #f1356d;
+}
+.navbar .links {
+  margin-left: auto;
+}
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+  color: #333;
+}
+.navbar a:hover {
+  color: #fff;
+  border-radius: 8px;
+  background-color: #f1356d
+}
+.content {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+
+
+/* Single resource display page */
+
+.painting-title {
+  color: #c55275 !important;
+}
+
+.container {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.container h1 {
+  color: #f1356d;
+  margin-bottom: 2rem;
+}
+
+
+.image-frame {
+  padding: 100px;
+  background-color: #f3f2f2;
+  background-image: url("https://www.transparenttextures.com/patterns/cloth-alike.png")
+  
+}
+
+
+.painting {
+  border: #61182e 6px solid;
+  display: block;
+  margin:auto;
+  margin-bottom: 3rem;
+}
+
+
+.resources {
+  padding: 25px;
+}
+
+.resource-titles {
+  display: inline-block;
+  text-align: left;
+}
+
+.resource-details {
+  text-align: left ;
+  display: inline-block;
+}
+
+
+/* Resource table */
+
+
+.resource-table h5 {
+  color: black;
+}
+
+.resource-table td {
+    text-align: left;
+    padding-right: 2rem;
+    color:#333;
+    border: 1px solid #61182e;
+    padding: 10px;
+}
+
+.resource-table {
+  margin: auto;
+  border: 1px solid #61182e;
+  
+}
+
+.resources-table {
+  margin: auto;
+  margin-bottom: 10rem !important;
+  border: 4mm ridge #f1356d;
+  /* box-shadow: -5px -5px 30px 5px #f1356d, 5px 5px 30px 5px #61182e; */
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  font-size: 18px;
+}
+
+.resources-table a {
+  color:#6d1a33;
+}
+
+.resources-table a:hover {
+  color:#9e2449;
+  text-decoration: underline;
+}
+
+.resources-table td , th {
+  color: #333;
+  padding: 0 1rem;
+  border: 1mm ridge #f1356d;
+  /* border: #f1356d 1px solid; */
+}
+
+.resources-table tr:nth-child(odd) {
+  background: #ff427b;
+}
+
+.resources-table tr:nth-child(even) {
+  background: #ff96b6;
+}
+
+
+
+.home-button  { 
+  text-decoration: none;
+  padding: 6px;
+  color: #f1356d;
+  border: 1px solid #f1356d;
+  border-radius: 20%;
+}
+.home-button:hover {
+  color: #fff;
+  border-radius: 8px;
+  background-color: #f1356d
+}
+
+.container h5 {
+  display: inline-block;
+  text-align: left;
+}
+
+.container hr {
+  color: #333;
+  width: 100%;
+  border: #333 1px solid;
+  border-radius: 60%;
+}
+
+
+
+/* Resources list */
+
+
+.resources {
+  padding: auto;
+  margin: auto;
+  text-align: center;
+  
+}
+
+.resources-item-link {
+  text-decoration: none;
+}
+
+
+.resources-item {
+  width: 100%;
+  text-align: center;
+}
+
+hr {
+  color:#333;
+  width: 70%;
+  margin: 0 15%;
+  margin-bottom: 20px;
+ 
+}
+
+.resources h2 {
+  font-size: 22px;
+  color: #ca2758;
+}
+
+.page-links a {
+  text-decoration: none;
+  color: #fff;
+  margin: 0 0.4rem;
+  display: inline-block;
+  width: 3rem;
+  max-width: 100%;
+  padding: 5px;
+  border-radius: 20%;
+  background-color: #f1356d;
+}
+
+.page-links a:hover {
+
+  background-color: #61182e;
+  color: #fff;
+}
+
+
+/* Popup  & its Animation*/
+
+/* The animation code */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0;}
+}
+
+/* The element to apply the animation to */
+
+#popup {
+  color:#f1356d;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.fade-in {
+  display: block;
+  animation-name: fadeIn;
+  animation-duration: 2s;
+}
+
+.fade-out {
+  animation-name: fadeOut;
+  animation-duration: 2s;
+}
+
+
+
+/* Input at bottom of the page */
+
+#page_input {
+  width: 6rem;
+}
+
+
+#manual-enter {
+  margin-top: 0.8rem;
+}
+
+#manual-enter h6 {
+  color: #cccccc;
+}
+
+#submit-button {
+  background-color: #f1356d;
+  color:#f2f2f2;
+  border: none;
+  border-radius: 19px;
+  margin-bottom: 0.6rem;
+}
+
+
+
+
+
+/* this is a class that is going to be added
+through javascript to the current page button */
+.active-page {
+  background-color: #fff !important;
+  border: #ca2758 1px solid !important;
+  color: #ca2758 !important;
+}
+
+/* About page */
+
+.about-container {
+  padding-top: 20px;
+  margin-right: 20%;
+  margin-left: 20%;
+  font-size: 24px;
+
+}
+
+.about-container p , h3 {
+  color: #333;
+}
+
+.about-container hr{
+  color: #333;
+  width: 100%;
+}
+
+
+.about-container a {
+  color: #f1356d;
+  text-decoration: none;
+}
+
+.about-container a:hover {
+  color:#61182e;
+}
+
+
+
+/* Footer */
+
+.footer-padding {
+    padding-bottom: 20px;
+}
+
+
+.footer {
+  position: relative;
+	text-align: center;
+	bottom: 0;
+  padding: 6px;
+	width: 100%;
+	height: 40px;
+	/* background-color: #f5f3f3; */
+  color: #cccccc;
+}
+

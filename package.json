@@ -1,0 +1,20 @@
+{
+  "name": "aiocapi",
+  "version": "1.0.0",
+  "description": "A web application that utilizes the Art Institute of Chicago API to get data rendered on your screen",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Stavros Thalassinos",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "node-fetch": "^3.2.10"
+  }
+}
